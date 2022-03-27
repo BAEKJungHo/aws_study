@@ -95,6 +95,29 @@ IAM(Identity and Access Management)은 유저를 관리하고 접근 레벨 및 
 
 ![elb](https://user-images.githubusercontent.com/47518272/160271238-e486ecec-65ec-4432-9cac-c52e2cdde63c.png)
 
+# Lambda
+
+- Serverless 의 주축을 담당
+- Events 를 통하여 Lambda 를 실행시킴
+- NodeJS, Python, Java, GO 등 다양한 언어 지원
+- Lambda Function
+
+## 비용
+
+- Lambda Function이 실행될때만 돈 지불
+- 매달 1.000.000 함수 호출 시 무료 (그 후로는 유료)
+
+## 기타
+
+- 최대 300초(5분) 런타임 시간 허용
+- 512MB의 일시적인 디스크 공간 제공 (/tmp/)
+- 최대 50MB Deployment Package 허용
+
+## 사용 예
+
+- `S3 -> Lambda -> DB`
+- `IoT -> Lambda -> SNS`
+
 ## References
 
 - Inflearn. AWS 입문자를 위한 강의
