@@ -95,6 +95,9 @@ IAM(Identity and Access Management)은 유저를 관리하고 접근 레벨 및 
 
 ![elb](https://user-images.githubusercontent.com/47518272/160271238-e486ecec-65ec-4432-9cac-c52e2cdde63c.png)
 
+- EC2 는 Priavte IP Address 밖에 볼 수 없음
+- 이때, X-Forwarded-For Header 를 통해 Public IP Address 를 얻을 수 있음
+
 # Lambda
 
 - Serverless 의 주축을 담당
@@ -117,6 +120,61 @@ IAM(Identity and Access Management)은 유저를 관리하고 접근 레벨 및 
 
 - `S3 -> Lambda -> DB`
 - `IoT -> Lambda -> SNS`
+
+# S3(Simple Storage Service)
+
+- 안전하고 가변적인 Object 저장공간을 제공 (ex: Google Cloud)
+- 편리한 UI 인터페이스를 통해 어디서나 쉽게 데이터를 저장하고 불러올 수 있음
+- 파일 크기는 0KB 부터 5TB 까지 지원
+- 저장공간 무제한
+- Bucket 이라는 이름을 사용함 (디렉토리와 유사함)
+- Bucket 은 보편적인 namespace 를 사용함
+
+## 구성 요소
+
+- Key
+- Value
+- Version ID
+- Metadata
+- CORS (Cross Origin Resource Sharing)
+
+## S3 Data Consistency Model
+
+- Read after Write Consistency(PUT)
+- Eventual Consistency(UPDATE, DELETE)
+
+## S3 스토리지
+
+- __일반 S3__
+  - 가장 보편적으로 사용되는 스토리지 타입
+  - 높은 내구성, 가용성 (Durability, Availability)   
+- __S3 - IA (Infrequent Access)__
+  - 자주 접근되지는 않으나 접근시 빠른 접근이 요구되는 파일이 많을 시 유용
+  - 일반 S3 에 비해 비용은 저렴하나 접근시 추가 비용 발생
+  - 멀티 AZ 를 통한 데이터 저장 
+- __S3 - One Zone IA__
+  - 단일 AZ를 통한 데이터 저장
+  - 단일 AZ에 의한 데이터 접근 제한 (조금 낮은 가용성)
+  - 데이터 접근시 S3 - IA보다 20% 비용 저렴
+- __Glacier__
+  - 거의 접근하지 않을 데이터 저장 시 유용
+  - 매우 저렴한 비용
+  - 데이터 접근시 대략 4-5시간 소요
+- __Intelligent Tiering__
+  - 데이터 접근 주기가 불규칙할때 매우 유용
+  - 2가지 티어 존재
+    - Frequent Tier
+    - Infrequent Tier
+  -  데이터 접근주기에 따라 두가지 티어중 하나로 선택됨
+  - Frequent Tier가 비용이 약간 더 비쌈
+  - 최고의 비용 절감 효율을 누릴 수 있음 
+
+## S3 요금
+
+- GB 당
+- PUT, GET, COPY 요청 횟수당
+- 데이터 다운로드시 / 다른 리소스로 전송시
+- Metadata (object tag)
 
 ## References
 
