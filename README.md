@@ -1,6 +1,8 @@
 # AWS
 
 - [AWS API Gateway](https://aws.amazon.com/ko/api-gateway/)
+- [Serverless API Gateway](https://www.serverless.com/framework/docs/providers/aws/events/apigateway)
+- [AWS Lambda](https://aws.amazon.com/ko/getting-started/hands-on/run-serverless-code/)
 
 # IAM(Identity and Access Management)
 
