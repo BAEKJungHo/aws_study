@@ -1,5 +1,7 @@
 # AWS
 
+- [AWS API Gateway](https://aws.amazon.com/ko/api-gateway/)
+
 # IAM(Identity and Access Management)
 
 IAM(Identity and Access Management)은 유저를 관리하고 접근 레벨 및 권한에 대한 관리할 수 있는 웹 서비스.
