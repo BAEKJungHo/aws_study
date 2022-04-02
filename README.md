@@ -4,6 +4,16 @@
 - [Serverless API Gateway](https://www.serverless.com/framework/docs/providers/aws/events/apigateway)
 - [AWS Lambda](https://aws.amazon.com/ko/getting-started/hands-on/run-serverless-code/)
 
+# IaaS, PaaS, FaaS
+
+- IaaS(EC2, VM Instance 등)를 사용하여 Tomcat, JBoss 등의 WAS 배포를 통한 운영
+- PaaS(ElastickBeansTalk 등)를 사용하여 war 혹은 jar 파일의 배포를 통한 운영
+- FaaS(Lambda, Functions 등)를 사용하여 코드 배포를 통한 운여
+  - API Gateway 를 사용하여 REST API URI 를 잡아줘야 한다.
+  - 비지니스 로직이 담겨져 있는 코드들만 들어있다. 즉, 함수의 이름과 로직만 담겨져있다.
+  - 따라서, 해당 코드가 어느 URI 를 타야하는지에 대한 정보가 없기 때문에 이에 대한 URI 주소를 매겨줘야 한다.
+  - API Gateway 는 이런 URI 를 하나로 통합하는 역할을 맡게 된다.
+
 # IAM(Identity and Access Management)
 
 IAM(Identity and Access Management)은 유저를 관리하고 접근 레벨 및 권한에 대한 관리할 수 있는 웹 서비스.
